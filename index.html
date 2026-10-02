@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amaya Beauty</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff5f8;
+            color: #4a2c35;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #f7c6d9;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #8f3f61;
+        }
+
+        nav a {
+            color: #4a2c35;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #b84f78;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 70px 20px;
+            background: linear-gradient(#ffe4ee, #fff5f8);
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            color: #8f3f61;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 25px;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #b84f78;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .button:hover {
+            background-color: #8f3f61;
+        }
+
+        .about {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .about img {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 6px solid #f7c6d9;
+            margin-bottom: 20px;
+        }
+
+        .about h2,
+        .services h2,
+        .contact h2 {
+            color: #8f3f61;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            max-width: 650px;
+            margin: auto;
+        }
+
+        .services {
+            padding: 60px 8%;
+            background-color: #ffe4ee;
+            text-align: center;
+        }
+
+        .service-container {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .service {
+            background-color: white;
+            padding: 30px;
+            width: 250px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .service h3 {
+            color: #b84f78;
+            margin-bottom: 10px;
+        }
+
+        .contact {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .contact p {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: #8f3f61;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">Amaya Beauty</div>
+
+        <nav>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Welcome to Amaya Beauty</h1>
+        <p>Beauty, confidence, and style — all in one place.</p>
+        <a href="#contact" class="button">Book an Appointment</a>
+    </section>
+
+    <section class="about" id="about">
+        <h2>Meet Your Stylist</h2>
+
+        <!-- Replace this image with your own photo later -->
+        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=500&q=80" 
+             alt="Beauty and cosmetology">
+
+        <p>
+            Hi, I'm Amaya! I'm a licensed cosmetologist who loves helping
+            people feel confident and beautiful. My goal is to create a
+            comfortable experience while giving every client a look they love.
+        </p>
+    </section>
+
+    <section class="services" id="services">
+        <h2>My Services</h2>
+
+        <div class="service-container">
+
+            <div class="service">
+                <h3>Hair Styling</h3>
+                <p>Beautiful styles for everyday looks or special occasions.</p>
+            </div>
+
+            <div class="service">
+                <h3>Silk Press</h3>
+                <p>A smooth, shiny, and polished look for your hair.</p>
+            </div>
+
+            <div class="service">
+                <h3>Color Services</h3>
+                <p>Bring your vision to life with a fresh new hair color.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2>Contact Me</h2>
+
+        <p>Ready for your next look?</p>
+        <p><strong>Email:</strong> yourname@email.com</p>
+        <p><strong>Instagram:</strong> @yourinstagram</p>
+
+        <br>
+
+        <a href="mailto:yourname@email.com" class="button">
+            Contact Me
+        </a>
+    </section>
+
+    <footer>
+        <p>© 2026 Amaya Beauty | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>
