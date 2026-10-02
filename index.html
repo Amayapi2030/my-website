@@ -3,40 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Hair by Aya</title>
+
+    <title>Hair by Aya</title>
 
     <style>
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
-            font-family: Arial, sans-serif;
-            background-color: #fff5f8;
-            color: #4a2c35;
-            line-height: 1.6;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #fff7fa;
+            color: #4a2635;
         }
 
+        /* NAVIGATION */
         header {
-            background-color: #f7c6d9;
+            background-color: #ffffff;
             padding: 20px 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
         }
 
         .logo {
             font-size: 28px;
             font-weight: bold;
-            color: #8f3f61;
+            color: #b84f78;
         }
 
         nav a {
-            color: #4a2c35;
+            color: #4a2635;
             text-decoration: none;
-            margin-left: 20px;
+            margin-left: 25px;
             font-weight: bold;
         }
 
@@ -44,68 +53,88 @@
             color: #b84f78;
         }
 
+        /* HERO */
         .hero {
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            padding: 70px 20px;
-            background: linear-gradient(#ffe4ee, #fff5f8);
+            padding: 80px 20px;
+            background: linear-gradient(
+                135deg,
+                #ffdce9,
+                #fff7fa,
+                #f9c6d9
+            );
+        }
+
+        .hero-content {
+            max-width: 800px;
         }
 
         .hero h1 {
-            font-size: 48px;
-            color: #8f3f61;
+            font-size: 65px;
+            color: #9d3f67;
             margin-bottom: 15px;
         }
 
+        .hero h2 {
+            font-size: 28px;
+            font-weight: normal;
+            margin-bottom: 20px;
+            color: #6b3b4d;
+        }
+
         .hero p {
-            font-size: 20px;
-            margin-bottom: 25px;
+            font-size: 19px;
+            margin-bottom: 30px;
         }
 
         .button {
             display: inline-block;
             background-color: #b84f78;
             color: white;
-            padding: 12px 25px;
-            border-radius: 25px;
+            padding: 14px 30px;
+            border-radius: 30px;
             text-decoration: none;
             font-weight: bold;
+            transition: 0.3s;
         }
 
         .button:hover {
-            background-color: #8f3f61;
+            background-color: #8f3459;
+            transform: scale(1.05);
         }
 
+        /* ABOUT */
         .about {
             text-align: center;
-            padding: 60px 20px;
+            padding: 80px 20px;
+            background-color: white;
         }
 
-        .about img {
-            width: 250px;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 6px solid #f7c6d9;
-            margin-bottom: 20px;
+        .section-title {
+            font-size: 38px;
+            color: #9d3f67;
+            margin-bottom: 30px;
         }
 
-        .about h2,
-        .services h2,
-        .contact h2 {
-            color: #8f3f61;
-            font-size: 32px;
-            margin-bottom: 20px;
-        }
-
-        .about p {
-            max-width: 650px;
+        .about-content {
+            max-width: 750px;
             margin: auto;
         }
 
+        .about-content p {
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        /* SERVICES */
         .services {
-            padding: 60px 8%;
-            background-color: #ffe4ee;
+            padding: 80px 8%;
             text-align: center;
+            background-color: #ffe4ee;
         }
 
         .service-container {
@@ -113,109 +142,337 @@
             justify-content: center;
             gap: 25px;
             flex-wrap: wrap;
+            margin-top: 35px;
         }
 
         .service {
             background-color: white;
-            padding: 30px;
-            width: 250px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            padding: 35px 25px;
+            width: 280px;
+            min-height: 180px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: 0.3s;
+        }
+
+        .service:hover {
+            transform: translateY(-8px);
+        }
+
+        .service-icon {
+            font-size: 35px;
+            margin-bottom: 15px;
         }
 
         .service h3 {
             color: #b84f78;
-            margin-bottom: 10px;
+            font-size: 23px;
+            margin-bottom: 12px;
         }
 
+        .service p {
+            color: #6b4a57;
+        }
+
+        /* GALLERY */
+        .gallery {
+            padding: 80px 8%;
+            text-align: center;
+            background-color: #fff7fa;
+        }
+
+        .gallery-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 35px;
+        }
+
+        .gallery-box {
+            width: 250px;
+            height: 250px;
+            border-radius: 20px;
+            background-color: #f9c6d9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #8f3459;
+            font-weight: bold;
+            overflow: hidden;
+        }
+
+        .gallery-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* CONTACT */
         .contact {
             text-align: center;
-            padding: 60px 20px;
+            padding: 80px 20px;
+            background-color: #ffdce9;
         }
 
         .contact p {
-            margin-bottom: 10px;
+            font-size: 18px;
+            margin-bottom: 12px;
         }
 
+        .instagram {
+            font-size: 24px;
+            font-weight: bold;
+            color: #b84f78;
+            margin: 20px 0 30px;
+        }
+
+        /* FOOTER */
         footer {
-            background-color: #8f3f61;
+            background-color: #8f3459;
             color: white;
             text-align: center;
-            padding: 20px;
+            padding: 25px;
+        }
+
+        /* MOBILE */
+        @media (max-width: 700px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 0 8px;
+                font-size: 14px;
+            }
+
+            .hero h1 {
+                font-size: 45px;
+            }
+
+            .hero h2 {
+                font-size: 22px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
         }
     </style>
 </head>
 
 <body>
 
+    <!-- NAVIGATION -->
     <header>
-        <div class="logo">Amaya Beauty</div>
+
+        <div class="logo">
+            Hair by Aya
+        </div>
 
         <nav>
             <a href="#about">About</a>
             <a href="#services">Services</a>
+            <a href="#gallery">Gallery</a>
             <a href="#contact">Contact</a>
         </nav>
+
     </header>
 
+
+    <!-- HERO SECTION -->
     <section class="hero">
-        <h1>Welcome to Amaya Beauty</h1>
-        <p>Beauty, confidence, and style — all in one place.</p>
-        <a href="#contact" class="button">Book an Appointment</a>
+
+        <div class="hero-content">
+
+            <h1>Hair by Aya</h1>
+
+            <h2>Beauty. Confidence. Your Hair.</h2>
+
+            <p>
+                Helping you look and feel your best, one hairstyle at a time.
+            </p>
+
+            <a href="#contact" class="button">
+                Book an Appointment
+            </a>
+
+        </div>
+
     </section>
 
+
+    <!-- ABOUT SECTION -->
     <section class="about" id="about">
-        <h2>Meet Your Stylist</h2>
 
-        <!-- Replace this image with your own photo later -->
-        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=500&q=80" 
-             alt="Beauty and cosmetology">
+        <h2 class="section-title">
+            About Me
+        </h2>
 
-        <p>
-            Hi, I'm Amaya! I'm a licensed cosmetologist who loves helping
-            people feel confident and beautiful. My goal is to create a
-            comfortable experience while giving every client a look they love.
-        </p>
+        <div class="about-content">
+
+            <p>
+                Hi, I'm Aya! I’m a licensed cosmetologist who loves
+                creating beautiful hairstyles and helping my clients
+                feel confident. My goal is to make every appointment
+                comfortable, fun, and personalized to you.
+            </p>
+
+            <br>
+
+            <p>
+                Whether you're looking for a fresh style, a special
+                occasion look, or simply want to treat yourself,
+                Hair by Aya is here for you. 💕
+            </p>
+
+        </div>
+
     </section>
 
+
+    <!-- SERVICES SECTION -->
     <section class="services" id="services">
-        <h2>My Services</h2>
+
+        <h2 class="section-title">
+            My Services
+        </h2>
 
         <div class="service-container">
 
             <div class="service">
+
+                <div class="service-icon">💇🏽‍♀️</div>
+
                 <h3>Hair Styling</h3>
-                <p>Beautiful styles for everyday looks or special occasions.</p>
+
+                <p>
+                    Beautiful hairstyles created to fit your
+                    personal style.
+                </p>
+
             </div>
 
+
             <div class="service">
+
+                <div class="service-icon">✨</div>
+
                 <h3>Silk Press</h3>
-                <p>A smooth, shiny, and polished look for your hair.</p>
+
+                <p>
+                    A smooth, sleek, and shiny look for your hair.
+                </p>
+
             </div>
 
+
             <div class="service">
-                <h3>Color Services</h3>
-                <p>Bring your vision to life with a fresh new hair color.</p>
+
+                <div class="service-icon">🎀</div>
+
+                <h3>Special Occasion</h3>
+
+                <p>
+                    Glamorous styles for birthdays, events,
+                    photoshoots, and special moments.
+                </p>
+
+            </div>
+
+
+            <div class="service">
+
+                <div class="service-icon">💗</div>
+
+                <h3>Custom Styles</h3>
+
+                <p>
+                    Have a specific look in mind? Let's bring
+                    your vision to life.
+                </p>
+
             </div>
 
         </div>
+
     </section>
 
+
+    <!-- GALLERY SECTION -->
+    <section class="gallery" id="gallery">
+
+        <h2 class="section-title">
+            Hair Gallery
+        </h2>
+
+        <p>
+            Check out some of my work!
+        </p>
+
+        <div class="gallery-container">
+
+            <div class="gallery-box">
+                <span>Your Photo Here</span>
+            </div>
+
+            <div class="gallery-box">
+                <span>Your Photo Here</span>
+            </div>
+
+            <div class="gallery-box">
+                <span>Your Photo Here</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT SECTION -->
     <section class="contact" id="contact">
-        <h2>Contact Me</h2>
 
-        <p>Ready for your next look?</p>
-        <p><strong>Instagram:</strong> @Hair_byaya19</p>
+        <h2 class="section-title">
+            Book With Me
+        </h2>
 
-        <br>
+        <p>
+            Ready for your next hairstyle?
+        </p>
 
-        <a href="mailto:yourname@email.com" class="button">
-            Contact Me
+        <p>
+            Follow me on Instagram to see my work and
+            message me about appointments.
+        </p>
+
+        <div class="instagram">
+            📸 @Hair_byaya19
+        </div>
+
+        <a
+            href="https://www.instagram.com/Hair_byaya19/"
+            target="_blank"
+            class="button"
+        >
+            Visit My Instagram
         </a>
+
     </section>
 
+
+    <!-- FOOTER -->
     <footer>
-        <p>© 2026 Amaya Beauty | All Rights Reserved</p>
+
+        <p>
+            © 2026 Hair by Aya | All Rights Reserved
+        </p>
+
+        <p>
+            Instagram: @Hair_byaya19
+        </p>
+
     </footer>
 
 </body>
